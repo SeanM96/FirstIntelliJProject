@@ -1,0 +1,45 @@
+import java.util.Scanner; 
+
+public class mainClass {
+	
+	static int state = 0;
+	static String response = "";
+	static int currentISBN = 0;
+	
+public static void main(String[] args)
+{
+	Scanner scan = new Scanner(System.in);
+	BinTree tree = new BinTree();
+	
+	tree.addBook("American Psycho","Bret Easton Ellis",1);
+	tree.addBook("Harry Potter","JK Rowling",2);
+	tree.addBook("Charles Dickens","William Shakespeare",4);
+	tree.addBook("A Series Of Unfortunate Events","Lemony Snicket",3);
+	
+	switch (state)
+	{
+	case 0:
+		System.out.println("Select a book: ");
+		currentISBN = scan.nextInt();
+		System.out.println(tree.findBook(currentISBN));
+		state = 1;
+		//break;
+	case 1: 
+		System.out.println("Would you like to loan this book? ");
+		response = scan.next();
+				if (response == "y")
+				{
+					//tree.loanBook(currentISBN);
+					System.out.println(state);
+					state = 0;
+				}
+				else
+				{
+					state = 0;
+				}
+				//break;
+		}
+	//scan.close(); 
+}
+}
+

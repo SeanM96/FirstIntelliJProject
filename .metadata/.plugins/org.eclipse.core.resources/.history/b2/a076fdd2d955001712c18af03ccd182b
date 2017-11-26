@@ -1,0 +1,47 @@
+
+public class Book {
+
+	String title;
+	String author;
+	int ISBN;
+	boolean onLoan = false;
+	Node root;
+	
+	public Book(String title, String author, int ISBN)
+	{
+		this.title = title;
+		this.author = author;
+		this.ISBN = ISBN;
+		onLoan = false;
+	}
+	
+	public Book()
+	{
+		
+	}
+	
+	public Node findBook(int ISBN)
+	{
+		Node currentNode = root;
+		
+		while(currentNode.b.ISBN != ISBN)
+		{
+			if (ISBN < currentNode.b.ISBN)
+			{
+				currentNode = currentNode.leftChild;
+			}
+			else
+			{
+				currentNode = currentNode.rightChild;
+			}
+			
+			if (currentNode == null)
+			{
+				return null;
+			}
+		}
+		return currentNode;
+	}
+	
+	
+}
