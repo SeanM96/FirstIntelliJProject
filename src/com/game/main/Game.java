@@ -16,10 +16,6 @@ public class Game extends Canvas implements Runnable {
         new Window(WIDTH, HEIGHT, "Amy!", this);
 
         handler = new Handler();
-        handler.addObject(new WhiteBall (WIDTH / 4, HEIGHT / 2 - 10, ID.WhiteBall));
-        for (int i = 10; i < 15; i++) {
-            handler.addObject(new Yellows(WIDTH / i * 10, HEIGHT / 2 -i / 14, ID.Yellows));
-        }
     }
 
 
