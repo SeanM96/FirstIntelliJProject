@@ -13,9 +13,12 @@ public class Game extends Canvas implements Runnable {
     private Handler handler;
 
     public Game() {
+        handler = new Handler();
+        this.addKeyListener(new KeyInput(handler));
+
         new Window(WIDTH, HEIGHT, "Amy!", this);
 
-        handler = new Handler();
+        handler.addObject(new Player(32,32,ID.Player));
     }
 
 
@@ -76,7 +79,7 @@ public class Game extends Canvas implements Runnable {
 
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.GREEN);
+        g.setColor(Color.black);
         g.fillRect(0,0, WIDTH, HEIGHT);
 
         handler.render(g);
