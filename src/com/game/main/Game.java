@@ -2,6 +2,7 @@ package com.game.main;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
+import java.util.Random;
 
 public class Game extends Canvas implements Runnable {
 
@@ -19,6 +20,9 @@ public class Game extends Canvas implements Runnable {
         new Window(WIDTH, HEIGHT, "Amy!", this);
 
         handler.addObject(new Player(32,32,ID.Player));
+        for(int i = 0; i< 20; i++) {
+            handler.addObject(new BasicEnemy(32, 50 , ID.BasicEnemy));
+        }
     }
 
 

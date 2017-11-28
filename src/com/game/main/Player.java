@@ -12,6 +12,16 @@ public class Player extends GameObject{
     public void tick(){
         x+=velX;
         y+=velY;
+
+
+        if (x >= Game.WIDTH - 42)
+            x = Game.WIDTH - 42;
+        if (x < Game.WIDTH - Game.WIDTH)
+            x = Game.WIDTH - Game.WIDTH;
+        if (y >= Game.HEIGHT - 66)
+            y = Game.HEIGHT - 66;
+        if (y < Game.HEIGHT - Game.HEIGHT)
+            y = Game.HEIGHT - Game.HEIGHT;
     }
 
     public void render(Graphics g) {
